@@ -82,7 +82,7 @@ class Policy:
 
 @dataclass
 class ArchiveEntry:
-    filename: str
+    name: str
     size: int
     compressed_size: Optional[int]
 
