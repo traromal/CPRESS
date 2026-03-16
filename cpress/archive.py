@@ -183,7 +183,12 @@ def compress_zip_mt(inputs: List[Path], output: Path, level: Optional[int], excl
     for target in inputs:
         for file_path, arcname in iter_files_with_arcname(target, exclude):
             files.append(str(file_path))
-            arcs.append(arcname.as_posix())
+            parent = arcname.parent
+            # pyminizip appends the filename to the provided arc name, so pass only the directory part.
+            if parent == Path("."):
+                arcs.append("")
+            else:
+                arcs.append(parent.as_posix())
     try:
         pyminizip.compress_multiple(files, arcs, str(output), password or "", level or 6)
         processed = 0
