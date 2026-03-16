@@ -80,6 +80,12 @@ class Policy:
             max_entry_bytes=data.get("max_entry_bytes"),
         )
 
+@dataclass
+class ArchiveEntry:
+    filename: str
+    size: int
+    compressed_size: Optional[int]
+
 def detect_format(path: Path) -> Optional[str]:
     name = path.name.lower()
     for ext in (".7z", ".rar", ".tar.gz", ".tgz", ".tar.bz2", ".tbz2", ".tar.xz", ".txz", ".tar.zst", ".tzst", ".zip", ".zst", ".gz"):
