@@ -1,0 +1,36 @@
+﻿# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Build/dist
+build/
+dist/
+*.egg-info/
+
+# Virtual env
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+
+# Testing caches
+.pytest_cache/
+.pytest_tmp/
+pytest-cache-files-*/
+
+# Sample outputs
+*.zip
+*.tar.zst
+*.parity.json
+demo.manifest.json
+
+# Editors
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
